@@ -4,7 +4,7 @@
   "description": "webpack project starter",
   "main": "server.js",
   "scripts": {
-    "dev": "webpack -d --watch",
+    "dev": "webpack-dev-server",
     "prod": "webpack -p"
   },
   "author": "Ahmad Irfan Mohammad Shukri",
@@ -17,6 +17,7 @@
     "node-sass": "^4.7.1",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.0",
-    "webpack": "^2.2.0"
+    "webpack": "^2.2.0",
+    "webpack-dev-server": "^2.2.0"
   }
 }
