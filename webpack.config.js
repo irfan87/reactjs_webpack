@@ -4,10 +4,13 @@ const devServer = require('webpack-dev-server');
 const path = require('path');
 
 module.exports = {
-    entry: "./src/app.js",
+    entry: {
+        app: "./src/index.js",
+        contact: "./src/contact.js"
+    },
     output: {
         path: path.resolve(__dirname + '/dist'),        
-        filename: "app.bundle.js",
+        filename: "[name].bundle.js",
     },
     module: {
         rules: [{
@@ -34,8 +37,16 @@ module.exports = {
           minify: {
               collapseWhitespace: false,
           },
-          hash: true,
-          template: './src/index.html', // Load a custom template (lodash by default see the FAQ for details)
+          hash: true, 
+          excludeChunks: ['contact'],
+          template: './src/index.html', 
+        }),
+        new HtmlWebpackPlugin({
+          title: 'Contact Page',
+          hash: true, 
+          chunks: ['contact'],
+          filename: 'contact.html',
+          template: './src/contact.html', 
         }),
         new ExtractTextPlugin({
             filename: "app.css",

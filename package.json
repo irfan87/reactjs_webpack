@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "dev": "webpack-dev-server",
-    "prod": "webpack -p"
+    "prod": "npm run clean && webpack -p",
+    "clean": "rimraf ./dist/*"
   },
   "author": "Ahmad Irfan Mohammad Shukri",
   "license": "MIT",
@@ -22,6 +23,7 @@
     "node-sass": "^4.7.1",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
+    "rimraf": "^2.6.2",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.0",
     "webpack": "^2.2.0",
