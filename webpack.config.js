@@ -16,18 +16,17 @@ module.exports = {
                 fallback: "style-loader",
                 use: ["css-loader", "sass-loader"]
             })
-        }],
-        rules: [{
+        }, {
             test: [/\.js$/, /\.jsx$/],
-            loader: 'babel-loader',
-            exclude: '/node_modules'
+            use: 'babel-loader',
+            exclude: '/node_modules/'
         }]
     },
     devServer: {
         contentBase: path.join(__dirname + '/dist'),
         compress: true,
         port: 9000,
-        stats: 'errors-only'
+        // stats: 'errors-only'
     },
     plugins: [
         new HtmlWebpackPlugin({
