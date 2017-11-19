@@ -1,0 +1,22 @@
+{
+  "name": "webpack_101",
+  "version": "1.0.0",
+  "description": "webpack project starter",
+  "main": "server.js",
+  "scripts": {
+    "dev": "webpack -d --watch",
+    "prod": "webpack -p"
+  },
+  "author": "Ahmad Irfan Mohammad Shukri",
+  "license": "MIT",
+  "devDependencies": {
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^2.1.2",
+    "html-webpack-plugin": "^2.30.1",
+    "inline-manifest-webpack-plugin": "^3.0.1",
+    "node-sass": "^4.7.1",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.0",
+    "webpack": "^2.2.0"
+  }
+}
