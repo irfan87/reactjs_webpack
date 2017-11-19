@@ -24,7 +24,6 @@ module.exports = {
     module: {
         rules: [{
             test: /\.scss$/,
-            // use: ["style-loader", "css-loader", "sass-loader"] 
             use: cssConfig
         }, {
             test: [/\.js$/, /\.jsx$/],
@@ -50,15 +49,16 @@ module.exports = {
           },
           hash: true, 
           excludeChunks: ['contact'],
-          template: './src/index.pug', 
+          template: './src/index.html', 
         }),
-        new HtmlWebpackPlugin({
-          title: 'Contact Page',
-          hash: true, 
-          chunks: ['contact'],
-          filename: 'contact.html',
-          template: './src/contact.html', 
-        }),
+        // if we want to have a multiple pages
+        // new HtmlWebpackPlugin({
+        //   title: 'Contact Page',
+        //   hash: true, 
+        //   chunks: ['contact'],
+        //   filename: 'contact.html',
+        //   template: './src/contact.html', 
+        // }),
         new ExtractTextPlugin({
             filename: "app.css",
             disable: !isProd,
