@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const devServer = require('webpack-dev-server');
 const path = require('path');
 
 module.exports = {
@@ -16,6 +17,12 @@ module.exports = {
                 use: ["css-loader", "sass-loader"]
             })
         }]
+    },
+    devServer: {
+        contentBase: path.join(__dirname + '/dist'),
+        compress: true,
+        port: 9000,
+        stats: 'errors-only'
     },
     plugins: [
         new HtmlWebpackPlugin({
