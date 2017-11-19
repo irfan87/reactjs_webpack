@@ -4,6 +4,14 @@ const devServer = require('webpack-dev-server');
 const path = require('path');
 const webpack = require('webpack');
 
+// it will return if webpack run on development
+let isProd = process.env.NODE_ENV === 'production'; 
+let cssDev = ['style-loader', 'css-loader', 'sass-loader'];
+let cssProd = ExtractTextPlugin.extract({fallback: "style-loader", use: ["css-loader", "sass-loader"], publicPath: '/dist'});
+
+// check if the production is true
+let cssConfig = isProd ? cssProd : cssDev;
+
 module.exports = {
     entry: {
         app: "./src/index.js",
@@ -16,11 +24,8 @@ module.exports = {
     module: {
         rules: [{
             test: /\.scss$/,
-            use: ["style-loader", "css-loader", "sass-loader"] 
-            // use: ExtractTextPlugin.extract({
-            //     fallback: "style-loader",
-            //     use: ["css-loader", "sass-loader"]
-            // })
+            // use: ["style-loader", "css-loader", "sass-loader"] 
+            use: cssConfig
         }, {
             test: [/\.js$/, /\.jsx$/],
             use: 'babel-loader',
@@ -56,7 +61,7 @@ module.exports = {
         }),
         new ExtractTextPlugin({
             filename: "app.css",
-            disable: true,
+            disable: !isProd,
             allChunks: true
         }),
         new webpack.NamedModulesPlugin(),
