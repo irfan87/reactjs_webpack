@@ -23,6 +23,9 @@ module.exports = {
             test: [/\.js$/, /\.jsx$/],
             use: 'babel-loader',
             exclude: '/node_modules/'
+        }, {
+            test: /\.pug$/,
+            use: 'pug-loader'
         }]
     },
     devServer: {
@@ -39,7 +42,7 @@ module.exports = {
           },
           hash: true, 
           excludeChunks: ['contact'],
-          template: './src/index.html', 
+          template: './src/index.pug', 
         }),
         new HtmlWebpackPlugin({
           title: 'Contact Page',
