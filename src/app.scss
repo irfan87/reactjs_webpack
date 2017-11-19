@@ -1,15 +1,6 @@
 body {
-    background-color: greenyellow;
-
-    #root{
-        flex: 1;
-        align-content: 'center';
-        flex-direction: 'row';
-        color: navy;
-        font-size: 30px;
-    }
-
-    h2 {
-        color: pink;
+    background: white;
+    h1, h2, h3, h4, h5, h6 {
+        color: maroon;
     }
 }
