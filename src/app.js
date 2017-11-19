@@ -5,7 +5,7 @@ export default class TestReact extends Component {
     render(){
         return(
             <div>
-                <h1>Hello, Developer! Welcome to React-land!</h1>
+                <h2>Houston, ReactJS is landing.. I repeat, ReactJS is landing! Please Standby..</h2>
             </div>
         )
     }
